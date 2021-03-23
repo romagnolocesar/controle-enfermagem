@@ -1,7 +1,6 @@
 package com.romagnolocesar.controleenfermagem.modelo.Paciente;
 
-import com.romagnolocesar.controleenfermagem.modelo.funcionario.Funcionario;
-import com.sun.xml.bind.v2.TODO;
+import com.romagnolocesar.controleenfermagem.modelo.Funcionario.Funcionario;
 
 import javax.persistence.*;
 import java.util.Calendar;

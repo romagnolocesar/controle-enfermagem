@@ -1,12 +1,12 @@
 package com.romagnolocesar.controleenfermagem.modelo.procedimento;
 
+import com.romagnolocesar.controleenfermagem.modelo.Funcionario.StatusFuncionario;
 import com.romagnolocesar.controleenfermagem.modelo.Paciente.Paciente;
-import com.romagnolocesar.controleenfermagem.modelo.funcionario.Funcionario;
+import com.romagnolocesar.controleenfermagem.modelo.Funcionario.Funcionario;
 
 import javax.persistence.*;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class Procedimento {
@@ -36,6 +36,10 @@ public class Procedimento {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="id_paciente")
     private Paciente paciente;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name="status_procedimento")
+    private StatusProcedimento StatusProcedimento;
 
 
 
@@ -93,5 +97,13 @@ public class Procedimento {
 
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+
+    public com.romagnolocesar.controleenfermagem.modelo.procedimento.StatusProcedimento getStatusProcedimento() {
+        return StatusProcedimento;
+    }
+
+    public void setStatusProcedimento(com.romagnolocesar.controleenfermagem.modelo.procedimento.StatusProcedimento statusProcedimento) {
+        StatusProcedimento = statusProcedimento;
     }
 }
