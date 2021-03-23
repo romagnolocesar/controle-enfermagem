@@ -1,5 +1,8 @@
 package com.romagnolocesar.controleenfermagem.modelo.Paciente;
 
+import com.romagnolocesar.controleenfermagem.modelo.funcionario.Funcionario;
+import com.sun.xml.bind.v2.TODO;
+
 import javax.persistence.*;
 import java.util.Calendar;
 import java.util.Date;
@@ -8,6 +11,7 @@ import java.util.Date;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_paciente")
     private int id;
 
     private String nome;
@@ -25,6 +29,11 @@ public class Paciente {
     @Temporal(TemporalType.TIME)
     @Column(name="hora_cadastro")
     private Date horaCadastro;
+
+// FIX - DECIDIDO QUE A RESPONSABILIDADE DE SABER QUE SÃO SEUS PACIENTES É DO FUNCIONARIO
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id_funcionario")
+    private Funcionario funcionario_responsavel;
 
 
     public Paciente() {
@@ -76,5 +85,13 @@ public class Paciente {
 
     public void setTipoPaciente(TipoPaciente tipoPaciente) {
         this.tipoPaciente = tipoPaciente;
+    }
+
+    public Funcionario getFuncionarioResponsavel() {
+        return funcionario_responsavel;
+    }
+
+    public void setFuncionarioResponsavel(Funcionario funcionarioResponsavel) {
+        this.funcionario_responsavel = funcionarioResponsavel;
     }
 }
