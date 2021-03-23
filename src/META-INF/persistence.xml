@@ -5,7 +5,7 @@
     <persistence-unit name="controleEnfermagem" transaction-type="RESOURCE_LOCAL">
         <class>
             com.romagnolocesar.controleenfermagem.modelo.Paciente.Paciente
-            com.romagnolocesar.controleenfermagem.modelo.Funcionario.Funcionario;
+            com.romagnolocesar.main.resources.controleenfermagem.modelo.Funcionario.Funcionario;
         </class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

@@ -1,8 +1,7 @@
 package com.romagnolocesar.controleenfermagem.modelo.procedimento;
 
-import com.romagnolocesar.controleenfermagem.modelo.Funcionario.StatusFuncionario;
-import com.romagnolocesar.controleenfermagem.modelo.Paciente.Paciente;
 import com.romagnolocesar.controleenfermagem.modelo.Funcionario.Funcionario;
+import com.romagnolocesar.controleenfermagem.modelo.Paciente.Paciente;
 
 import javax.persistence.*;
 import java.util.Calendar;
